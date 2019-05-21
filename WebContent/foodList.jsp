@@ -72,7 +72,7 @@
                     <td>
                         <a href="foodView.do?fid=${ff.fid }"><img src="images/read.png" alt="查看" title="查看"/></a>
                         <a href="userupdate.dofid=${ff.fid }"><img src="images/xiugai.png" alt="修改" title="修改"/></a>
-                        <a href="userDelete.do?fid=${ff.fid }"><img src="images/schu.png" alt="删除" title="删除"/></a>
+                        <a href="foodDelete.do?fid=${ff.fid }"><img src="images/schu.png" alt="删除" title="删除"/></a>
                     </td>
                 </tr>
                 </c:forEach>

@@ -17,5 +17,9 @@
   <select id="foodView" resultType="com.qgdx.entity.Food">
   	select * from food where fid=#{fid}
   </select>
+  
+  <delete id="dodelete3" parameterType="com.qgdx.entity.Food">
+  	delete from food where fid=#{fid}
+  </delete>
   		
   </mapper>
