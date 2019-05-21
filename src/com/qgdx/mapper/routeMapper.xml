@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 配置以下标签，表示该mapper文件映射到哪个dao接口 -->
+  <mapper namespace="com.qgdx.dao.RouteDao">
+  	<!-- 编写sql语句resultType:返回类型 parameterType：参数类型-->
+  
+  <select id="findAllRoute" resultType="com.qgdx.entity.Route">
+  	select * from route
+  </select>
+  
+  <select id="doseek2" resultType="com.qgdx.entity.Route">
+  	select * from route where rscenery like concat('%',#{rscenery},'%')
+  </select>
+  
+  <select id="routeView" resultType="com.qgdx.entity.Route">
+  	select * from route where rid=#{rid}
+  </select>
+  
+  <delete id="dodelete2" parameterType="com.qgdx.entity.Route">
+  	delete from route where rid=#{rid}
+  </delete>
+  		
+  </mapper>

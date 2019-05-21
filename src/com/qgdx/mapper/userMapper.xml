@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 配置以下标签，表示该mapper文件映射到哪个dao接口 -->
+  <mapper namespace="com.qgdx.dao.UserDao">
+  	<!-- 编写sql语句resultType:返回类型 parameterType：参数类型-->
+  	<select id="dologin" resultType="com.qgdx.entity.User" parameterType="String">
+  		select * from user where username = #{username}
+  	</select>
+  	
+  	<select id="findAllUser" resultType="com.qgdx.entity.User">
+  		select * from user
+  	</select>
+  	
+  	<insert id="doregist" parameterType="com.qgdx.entity.User">
+  		insert into user values(#{userid},#{username},#{usersex},#{usertel},#{userage},#{password})
+  	</insert>
+  	
+  	<select id="doseek" resultType="com.qgdx.entity.User">
+  		select * from user where username like concat('%',#{username},'%')
+  	</select>
+  	
+  	<select id="userView" resultType="com.qgdx.entity.User" parameterType="int">
+  		select * from user where userid=#{id}
+  	</select>
+  	
+  	<select id="doupdate" parameterType="int" resultType="com.qgdx.entity.User">
+  		select * from user where userid=#{userid}
+  	</select>
+  	
+  	<update id="updateaf" parameterType="com.qgdx.entity.User">
+  		update user set username=#{username},usersex=#{usersex},usertel=#{usertel},userage=#{userage} where userid=#{userid}
+  	</update>
+  	
+  	<delete id="dodelete" parameterType="com.qgdx.entity.User">
+  		delete from user where userid=#{userid}
+  	</delete>
+
+  
+  	
+  </mapper>
+  
+  	  

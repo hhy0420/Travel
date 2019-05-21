@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 配置以下标签，表示该mapper文件映射到哪个dao接口 -->
+  <mapper namespace="com.qgdx.dao.BeaDao">
+  	<!-- 编写sql语句resultType:返回类型 parameterType：参数类型-->
+  
+  <select id="findAllBea" resultType="com.qgdx.entity.Bea">
+  	select * from beautiful
+  </select>
+  
+  <select id="doseek1" resultType="com.qgdx.entity.Bea">
+  	select * from beautiful where bname like concat('%',#{bname},'%')
+  </select>
+  
+  <select id="beautifulView" resultType="com.qgdx.entity.Bea">
+  	select * from beautiful where bid=#{bid}
+  </select>
+  
+  <delete id="dodelete1" parameterType="com.qgdx.entity.Bea">
+  	delete from beautiful where bid=#{bid}
+  </delete>
+  		
+  </mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 配置以下标签，表示该mapper文件映射到哪个dao接口 -->
+  <mapper namespace="com.qgdx.dao.FoodDao">
+  	<!-- 编写sql语句resultType:返回类型 parameterType：参数类型-->
+  
+  <select id="findAllFood" resultType="com.qgdx.entity.Food">
+  	select * from food
+  </select>
+  
+  <select id="doseek3" resultType="com.qgdx.entity.Food">
+  	select * from food where fname like concat('%',#{fname},'%')
+  </select>
+  
+  <select id="foodView" resultType="com.qgdx.entity.Food">
+  	select * from food where fid=#{fid}
+  </select>
+  		
+  </mapper>
